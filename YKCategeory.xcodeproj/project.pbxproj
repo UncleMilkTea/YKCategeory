@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,9 +22,11 @@
 		A26A71F12317AD44006A6A5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26A71EF2317AD44006A6A5B /* LaunchScreen.storyboard */; };
 		A26A71F42317AD44006A6A5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A26A71F32317AD44006A6A5B /* main.m */; };
 		A26A71FE2317ADA6006A6A5B /* UIImage+YKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A26A71FD2317ADA6006A6A5B /* UIImage+YKImage.m */; };
+		C200AACC1AE32C7E672D45AD /* Pods_YKCategeory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FF82F80D334502E4AF8386 /* Pods_YKCategeory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		937934EDD03A55921B9688DC /* Pods-YKCategeory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCategeory.release.xcconfig"; path = "Target Support Files/Pods-YKCategeory/Pods-YKCategeory.release.xcconfig"; sourceTree = "<group>"; };
 		A21A6669232234E900DF20C4 /* NSString+YKString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YKString.h"; sourceTree = "<group>"; };
 		A21A666A232234E900DF20C4 /* NSString+YKString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YKString.m"; sourceTree = "<group>"; };
 		A21A666C2322366400DF20C4 /* NSArray+YKArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YKArray.h"; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		A26A71FB2317AD86006A6A5B /* YKCategeory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKCategeory.h; sourceTree = "<group>"; };
 		A26A71FC2317ADA6006A6A5B /* UIImage+YKImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YKImage.h"; sourceTree = "<group>"; };
 		A26A71FD2317ADA6006A6A5B /* UIImage+YKImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YKImage.m"; sourceTree = "<group>"; };
+		A7FF82F80D334502E4AF8386 /* Pods_YKCategeory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YKCategeory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1FBD38684ADE862807EBD3F /* Pods-YKCategeory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YKCategeory.debug.xcconfig"; path = "Target Support Files/Pods-YKCategeory/Pods-YKCategeory.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C200AACC1AE32C7E672D45AD /* Pods_YKCategeory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		009833571DACBB9435126717 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7FF82F80D334502E4AF8386 /* Pods_YKCategeory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		678CC78FE6DED876886A2BF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1FBD38684ADE862807EBD3F /* Pods-YKCategeory.debug.xcconfig */,
+				937934EDD03A55921B9688DC /* Pods-YKCategeory.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A26A71D82317AD44006A6A5B = {
 			isa = PBXGroup;
 			children = (
 				A26A71E32317AD44006A6A5B /* YKCategeory */,
 				A26A71E22317AD44006A6A5B /* Products */,
+				678CC78FE6DED876886A2BF6 /* Pods */,
+				009833571DACBB9435126717 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A26A71F72317AD44006A6A5B /* Build configuration list for PBXNativeTarget "YKCategeory" */;
 			buildPhases = (
+				B673D2179A4641E12E6184FB /* [CP] Check Pods Manifest.lock */,
 				A26A71DD2317AD44006A6A5B /* Sources */,
 				A26A71DE2317AD44006A6A5B /* Frameworks */,
 				A26A71DF2317AD44006A6A5B /* Resources */,
+				F31FCF70D0B1A188E95D22C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +215,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B673D2179A4641E12E6184FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YKCategeory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F31FCF70D0B1A188E95D22C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YKCategeory/Pods-YKCategeory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YKCategeory/Pods-YKCategeory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YKCategeory/Pods-YKCategeory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A26A71DD2317AD44006A6A5B /* Sources */ = {
@@ -346,6 +414,7 @@
 		};
 		A26A71F82317AD44006A6A5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1FBD38684ADE862807EBD3F /* Pods-YKCategeory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -364,10 +433,11 @@
 		};
 		A26A71F92317AD44006A6A5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 937934EDD03A55921B9688DC /* Pods-YKCategeory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J89744QE5F;
 				INFOPLIST_FILE = YKCategeory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,7 +445,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.houyukun.YKCategeory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = develope_all_0515;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

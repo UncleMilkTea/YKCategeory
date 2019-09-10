@@ -8,8 +8,11 @@
 
 #import "UIView+YKLine.h"
 #import <objc/runtime.h>
+#import <Masonry/Masonry.h>
+
 #define YKLineViewDefaultHeight 1
-#define YKLineViewDefaultColor  [UIColor colorWithHexString:@"#f5f5f5"]
+#define YKLineViewDefaultColor UIColor.lightGrayColor
+
 
 @implementation YKLineView
 {
@@ -20,22 +23,26 @@
 - (void)setLineHeight:(CGFloat)lineHeight
 {
     _lineHeight = lineHeight;
-    
-    self.sd_layout.heightIs(lineHeight);
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(lineHeight);
+    }];
 }
 
 - (void)setLeftMargin:(CGFloat)leftMargin
 {
     _leftMargin = leftMargin;
-    
-    self.sd_layout.leftSpaceToView(self.superview, leftMargin);
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.superview).offset(-leftMargin);
+    }];
 }
 
 - (void)setRightMargin:(CGFloat)rightMargin
 {
     _rightMargin = rightMargin;
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.superview).offset(rightMargin);
+    }];
     
-    self.sd_layout.rightSpaceToView(self, rightMargin);
 }
 
 - (void)setLineColor:(UIColor *)lineColor
@@ -59,7 +66,10 @@
         line.backgroundColor = YKLineViewDefaultColor;
         line.frame = CGRectMake(0, 0, self.bounds.size.width, YKLineViewDefaultHeight);
         [self addSubview:line];
-        line.sd_layout.leftEqualToView(self).rightEqualToView(self).topEqualToView(self).heightIs(ZYLineViewDefaultHeight);
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.equalTo(self);
+            make.height.mas_equalTo(YKLineViewDefaultHeight);
+        }];
         objc_setAssociatedObject(self, @selector(topLine), line, OBJC_ASSOCIATION_ASSIGN);
         lineV = line;
     }
@@ -68,12 +78,15 @@
 
 - (void)yk_makeBottomLine:(void (^)(YKLineView *))make
 {
-    ZYLineView *lineV = self.bottomLine;
+    YKLineView *lineV = self.bottomLine;
     if (lineV == nil) {
-        ZYLineView *line = [[ZYLineView alloc] init];
-        line.backgroundColor = ZYLineViewDefaultColor;
+        YKLineView *line = [[YKLineView alloc] init];
+        line.backgroundColor = YKLineViewDefaultColor;
         [self addSubview:line];
-        line.sd_layout.leftEqualToView(self).rightEqualToView(self).bottomEqualToView(self).heightIs(ZYLineViewDefaultHeight);
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.equalTo(self);
+            make.height.mas_equalTo(YKLineViewDefaultHeight);
+        }];
         objc_setAssociatedObject(self, @selector(bottomLine), line, OBJC_ASSOCIATION_ASSIGN);
         lineV = line;
     }
@@ -81,12 +94,12 @@
     
 }
 
-- (ZYLineView *)topLine
+- (YKLineView *)topLine
 {
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (ZYLineView *)bottomLine
+- (YKLineView *)bottomLine
 {
     return objc_getAssociatedObject(self, _cmd);
 }
@@ -107,7 +120,7 @@
 
 - (void)setTopLineMargin:(CGPoint)topLineMargin
 {
-    [self yk_makeTopLine:^(ZYLineView *lineView) {
+    [self yk_makeTopLine:^(YKLineView *lineView) {
         lineView.leftMargin = topLineMargin.x;
         lineView.rightMargin = topLineMargin.y;
     }];
@@ -134,7 +147,7 @@
 
 - (void)setBottomLineMargin:(CGPoint)bottomLineMargin
 {
-    [self yk_makeBottomLine:^(ZYLineView *lineView) {
+    [self yk_makeBottomLine:^(YKLineView *lineView) {
         lineView.leftMargin = bottomLineMargin.x;
         lineView.rightMargin = bottomLineMargin.y;
     }];
