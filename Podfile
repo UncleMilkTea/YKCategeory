@@ -6,6 +6,8 @@ target 'YKCategeory' do
   use_frameworks!
 	pod 'SDWebImage'
 	pod 'Masonry'
+  pod 'ReactiveCocoa', '~> 2.5'
+  pod 'AFNetworking'
   # Pods for YKCategeory
 
 end

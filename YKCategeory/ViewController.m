@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "YKCategeory/YKCategeory.h"
+#import "YKHeader.h"
 @interface ViewController ()
 
 @end
@@ -19,7 +19,12 @@
     
     NSMutableArray *array = [NSMutableArray array];
     
-    array.addObject(nil);
+    WS(weakSelf);
+    SS(strongSelf)
+    
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 
