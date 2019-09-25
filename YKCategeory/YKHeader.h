@@ -14,4 +14,5 @@
 #import "YKMethod.h"
 #import "YKRightImageButton.h"
 #import "YKTopImageButton.h"
+#import "YKProgressHUD.h"
 #endif /* YKHeader_h */

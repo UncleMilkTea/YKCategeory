@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+YKViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -56,6 +57,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (__kindof  UINavigationController *)yk_navigationController;
 //! 设置渐变色
 - (void)setGradualChangeColor:(UIColor *)startColor endColor:(UIColor *)endColor startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint;
+
+/**
+ Altert
+ @param configure 配置
+  @param sure 确定
+  @param cancle 取消
+ */
+- (void)yk_showAltertConfigure:(void (^)(YKAlterConfig *config))configure sure:(void (^)(NSString *text))sure cancle:(void (^)(void))cancle;
+
 
 @end
 

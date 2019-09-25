@@ -8,6 +8,7 @@
 
 #import "UIView+YKView.h"
 #import <objc/runtime.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation UIView (YKView)
 
@@ -196,6 +197,29 @@
     gradientLayer.endPoint = endPoint;
     gradientLayer.frame = CGRectMake(0, 0, self.width, self.height);
     [self.layer insertSublayer:gradientLayer atIndex:0];
+}
+
+- (void)yk_showAltertConfigure:(void (^)(YKAlterConfig * _Nonnull))configure sure:(void (^)(NSString *text))sure cancle:(void (^)(void))cancle
+{
+    YKAlterConfig *config = [[YKAlterConfig alloc]init];
+    configure?configure(config):nil;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:config.title message:config.message delegate:self cancelButtonTitle:config.single == NO?@"取消":nil otherButtonTitles:@"确定", nil];
+    if (config.addInput) {
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        config.textFieldBlock?config.textFieldBlock([alert textFieldAtIndex:0]):nil;
+    }else{
+        alert.alertViewStyle = config.v_style;
+    }
+    [alert.rac_buttonClickedSignal subscribeNext:^(id x) {
+        if ([x intValue]) {
+            UITextField *textField = [alert textFieldAtIndex:0];
+            sure?sure(textField.text):nil;
+        }else{
+            cancle?cancle():nil;
+        }
+    }];
+    
+    [alert show];
 }
 @end
 

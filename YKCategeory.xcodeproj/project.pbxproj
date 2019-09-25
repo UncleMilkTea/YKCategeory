@@ -21,6 +21,7 @@
 		A26A71F12317AD44006A6A5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26A71EF2317AD44006A6A5B /* LaunchScreen.storyboard */; };
 		A26A71F42317AD44006A6A5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A26A71F32317AD44006A6A5B /* main.m */; };
 		A26A71FE2317ADA6006A6A5B /* UIImage+YKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A26A71FD2317ADA6006A6A5B /* UIImage+YKImage.m */; };
+		A26ED5CB233321A300BA3C9F /* YKProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A26ED5CA233321A300BA3C9F /* YKProgressHUD.m */; };
 		A27C589D2328D60C000B85B2 /* YKMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = A27C58992328D60B000B85B2 /* YKMethod.m */; };
 		A27C589E2328D60C000B85B2 /* YKLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A27C589A2328D60B000B85B2 /* YKLog.m */; };
 		A27C58A22328D9F8000B85B2 /* YKRightImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A27C58A12328D9F8000B85B2 /* YKRightImageButton.m */; };
@@ -60,6 +61,8 @@
 		A26A71FB2317AD86006A6A5B /* YKCategeory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKCategeory.h; sourceTree = "<group>"; };
 		A26A71FC2317ADA6006A6A5B /* UIImage+YKImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YKImage.h"; sourceTree = "<group>"; };
 		A26A71FD2317ADA6006A6A5B /* UIImage+YKImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YKImage.m"; sourceTree = "<group>"; };
+		A26ED5C9233321A300BA3C9F /* YKProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKProgressHUD.h; sourceTree = "<group>"; };
+		A26ED5CA233321A300BA3C9F /* YKProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKProgressHUD.m; sourceTree = "<group>"; };
 		A27C58992328D60B000B85B2 /* YKMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKMethod.m; sourceTree = "<group>"; };
 		A27C589A2328D60B000B85B2 /* YKLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLog.m; sourceTree = "<group>"; };
 		A27C589B2328D60B000B85B2 /* YKMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKMethod.h; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				A27C58A12328D9F8000B85B2 /* YKRightImageButton.m */,
 				A27C58A32328DA2F000B85B2 /* YKTopImageButton.h */,
 				A27C58A42328DA2F000B85B2 /* YKTopImageButton.m */,
+				A26ED5C9233321A300BA3C9F /* YKProgressHUD.h */,
+				A26ED5CA233321A300BA3C9F /* YKProgressHUD.m */,
 			);
 			path = YKTool;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				A26A71E62317AD44006A6A5B /* AppDelegate.m in Sources */,
 				A2DD21CB23279F9C0026D2E0 /* UIViewController+YKViewController.m in Sources */,
 				A21A66712322396600DF20C4 /* NSDictionary+YKDictionary.m in Sources */,
+				A26ED5CB233321A300BA3C9F /* YKProgressHUD.m in Sources */,
 				A229116B2320AD0800DA83DE /* NSTimer+YKTimer.m in Sources */,
 				A2DD21CE2327A0460026D2E0 /* UIBarButtonItem+YKBarButtonItem.m in Sources */,
 				A26A71FE2317ADA6006A6A5B /* UIImage+YKImage.m in Sources */,

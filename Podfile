@@ -8,6 +8,7 @@ target 'YKCategeory' do
 	pod 'Masonry'
   pod 'ReactiveCocoa', '~> 2.5'
   pod 'AFNetworking'
+  pod 'MBProgressHUD'
   # Pods for YKCategeory
 
 end
